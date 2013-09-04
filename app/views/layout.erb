@@ -15,9 +15,30 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
 </head>
+  <title>
+
+  </title>
 <body>
+  <div class="container">
+  <div class="tab">
+    <span><h4><a href="/">Padawan Hacker</a></h4></span>
+        <span>
+          <ul>
+            <li><a href="">| comments  |</a></li>
+             <%if current_user%>
+            <li><a href="/post">| submit post |</a></li>
+            <%end%>
+             <%if current_user%>
+              <li><a href="/profile">| <%=@current_user.username%> |</a>
+                  <a href="/logout">| logout |</a></li>
+            <%else%>
+            <li><a href="/login">| login |</a></li>
+             <%end%>
+          </ul>
+         </span>
+    </div>
   <%= yield %>
+  </div>
 </body>
 </html>

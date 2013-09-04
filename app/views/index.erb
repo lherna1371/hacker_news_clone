@@ -1,11 +1,7 @@
-<div class="container">
-  <h1>Padawn Hacker</h1>
-  <p>may the hacker force be with you</p>
-<header>
-  <ul>
-    <li><a href="/">comments</a></li>
-    <li><a href="/">submit</a></li>
-    <li><a href="/login">log in</a></li>
-  </ul>
-</header>
-</div>
+<div class="content">
+  <ol number="1">
+  <% @post.each do |post|%>
+  <li><a href='/post/<%=post.id%>'><%=post.title%></a></li>
+   <%end%>
+   <ol>
+  </div>

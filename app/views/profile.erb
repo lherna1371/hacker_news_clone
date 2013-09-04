@@ -1,0 +1,33 @@
+
+Name: <%=current_user.username%><br>
+Member Since: <%=current_user.created_at%><br>
+Email: <%=current_user.email%><br>
+About Me: <%=current_user.about%><br>
+Link to my posts:
+<ol number="1">
+  <% @posts.each do |post|%>
+<li><a href="/post/<%=post.id%>"><%=post.title%> </a></li>
+  <%end%>
+</ol>
+Link to my comments:
+<ol number="1">
+  <% @comments.each do |comments|%>
+<li><a href=""><%=comments.content%></a></li>
+<%end%>
+</ol>
+
+
+<form action="/submit_email" method="POST">
+Email<br>
+<input required="required" type="email" name="email"><br>
+<input class="enter_button" type="submit" value="Submit Email">
+</form>
+About<br>
+<form action="/submit_about" method="POST">
+<textarea required="required" name="about" id="about">
+</textarea><br>
+<input class="enter_button" type="submit" value="Submit About">
+</form>
+
+
+

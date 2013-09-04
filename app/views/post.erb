@@ -1,0 +1,22 @@
+<div class="content">
+ <h3>Post Title: <%=@post.title %> </h3>
+  Post Body: <%= @post.body%>
+<%if current_user%>
+  <form action="/<%=@post.id%>/comments" method="POST">
+  Comments:<br/>
+    
+    <textarea name="comments" id="comments">
+    </textarea><br />
+      <input class="enter_button" type="submit" value="Submit" />
+  </form>
+  <%end%>
+
+  <ol number="1">
+    <%@comments.each do |comment| %>
+      <li><a href='/#<%=comment.id%>'><%=comment.content%></a></li>
+    <%end%>
+  </ol>
+</div>
+
+
+

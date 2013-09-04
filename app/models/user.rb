@@ -3,8 +3,6 @@ class User < ActiveRecord::Base
   has_many :posts
   
   validates :username, presence: true, uniqueness: true
-  # validates :email, uniqueness: true
-  # validates :email, format: /.*@.*\..*/
   validates :password_digest, presence: true
 
   include BCrypt

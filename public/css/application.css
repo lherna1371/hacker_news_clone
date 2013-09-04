@@ -1,9 +1,37 @@
-.container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+h4 a{
+  text-decoration: none;
+  color: black;
 }
-th {
-  text-align: left;
+.container{
+  margin: 20px 40px 0 40px;
+  height: 50px;
 }
+.tab ul li a {
+  padding-left: 10px;
+  text-decoration: none;
+  color: black;
+}
+.tab li:last-child{
+  float: right;
+}
+.tab li{
+  display: inline;
+}
+span{
+  display:inline-block;
+} 
+.tab {
+  color: black;
+  text-decoration:none;
+  border: 2px solid red;
+  background-color: #FE2E2E;
+  height: 40px;
+  padding-bottom: 10px;
+}
+
+.tab ul {
+  width: 900px;
+  list-style-type: none;
+}
+
+
