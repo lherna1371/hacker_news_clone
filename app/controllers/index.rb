@@ -65,8 +65,10 @@ end
 
 
 post '/submit_email' do 
-  current_user
-  @
+  @user = current_user
+  @user.update_attributes(email: params[:email])
+  # p current_user[:email]
+  # p params
 end 
 
 
