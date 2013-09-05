@@ -48,9 +48,9 @@ end
 
 post '/create_account' do
 
-  user = User.create!(username: params[:username], password: params[:password])  
+  user = User.create(username: params[:username], password: params[:password])  
   session[:user_id] = user.id
-  erb :index
+  redirect ("/")
 end 
 
 post '/:post_id/comments' do
@@ -69,11 +69,15 @@ post '/submit_email' do
   @user.update_attributes(email: params[:email])
   # p current_user[:email]
   # p params
+  redirect ("/")
 end 
 
 
 post '/submit_about' do 
+  @user = current_user
+  @user.update_attributes(about: params[:about])
 
+  redirect ("/")
 end 
 
 
